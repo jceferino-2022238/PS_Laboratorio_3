@@ -42,9 +42,14 @@ export const postPost = async (req, res) =>{
 export const postsPut = async (req, res = response) =>{
     const { id } = req.params;
     const {_id, ...rest} = req.body;
-    await Post.findByIdAndUpdate(id, rest);
-
+    const token = req.header('x-token');
+    const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+    const user = await User.findById(uid);
     const post = await Post.findOne({_id: id});
+    if(post.author.toString() !== user._id.toString()){
+        throw new Error('You are not the author of this post')
+    }
+    await Post.findByIdAndUpdate(id, rest);
     res.status(200).json({
         msg: "Post updated",
         post
@@ -53,11 +58,18 @@ export const postsPut = async (req, res = response) =>{
 
 export const postsDelete = async (req, res) =>{
     const { id } = req.params;
-    const post = await Post.findByIdAndUpdate(id, {state: false});
+    const token = req.header('x-token');
+    const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+    const user = await User.findById(uid);
+    const post = await Post.findOne({_id: id});
+    if(post.author.toString() !== user._id.toString()){
+        throw new Error('You are not the author of this post')
+    }
+    const postD = await Post.findByIdAndUpdate(id, {state: false});
     await User.updateMany({ posts: id}, {$pull: {posts: id}});
     res.status(200).json({
         msg: "Post deleted",
-        post
+        postD
     })
 }
 

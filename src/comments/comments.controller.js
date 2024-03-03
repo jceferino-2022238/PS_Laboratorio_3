@@ -50,8 +50,16 @@ export const commentPost = async (req, res) =>{
 export const commentsPut = async(req, res = response) =>{
     const { id } = req.params;
     const {_id, ...rest} = req.body;
-    await Comment.findByIdAndUpdate(id, rest);
+    const token = req.header('x-token');
+    const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+    const user = await User.findById(uid);
     const comment = await Comment.findOne({_id: id})
+    if(comment.author.toString() !== user._id.toString()){
+        throw new Error('You are not the author of this comment')
+    }
+
+    await Comment.findByIdAndUpdate(id, rest);
+    
     res.status(200).json({
         msg: "Comment updated",
         comment
@@ -60,10 +68,19 @@ export const commentsPut = async(req, res = response) =>{
 
 export const commentsDelete = async(req, res) =>{
     const { id } = req.params;
-    const comment = await Comment.findByIdAndUpdate(id, {state: false});
+
+    const token = req.header('x-token');
+    const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+    const user = await User.findById(uid);
+    const comment = await Comment.findOne({_id: id})
+    if(comment.author.toString() !== user._id.toString()){
+        throw new Error('You are not the author of this comment')
+    }
+
+    const commentD = await Comment.findByIdAndUpdate(id, {state: false});
     await Post.updateMany({comments: id}, {$pull: {comments: id}});
     res.status(200).json({
         msg: "Comment deleted",
-        comment
+        commentD
     })
 }

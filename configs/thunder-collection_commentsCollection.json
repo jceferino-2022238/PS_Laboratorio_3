@@ -1,44 +1,44 @@
 {
     "client": "Thunder Client",
-    "collectionName": "postsCollection",
-    "dateExported": "2024-03-03T21:42:13.240Z",
+    "collectionName": "commentsCollection",
+    "dateExported": "2024-03-03T21:42:19.065Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "32f69864-b4a2-4379-9e49-2fd4e54eae04",
-            "colId": "8a4a5f00-f7f2-4b20-a509-c333d8b5a850",
+            "_id": "b024d627-e5b6-4529-8966-30ca26e058f2",
+            "colId": "312f12bf-3b63-4474-be85-24392d5a71a6",
             "containerId": "",
-            "name": "newPost",
-            "url": "http://localhost:8080/ps_laboratorio_3/v1/posts",
+            "name": "newComment",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/comments/65e4edd128df6088634c90f9",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-03T06:44:23.136Z",
-            "modified": "2024-03-03T21:21:56.546Z",
+            "created": "2024-03-03T20:18:32.502Z",
+            "modified": "2024-03-03T21:40:05.852Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0ZTk2OGI4NWI3MTcxYzU0OGM5YjkiLCJpYXQiOjE3MDk1MDA4NjYsImV4cCI6MTcwOTUwNDQ2Nn0.W5s4lLSpjxawhmIKft7OQWgSp1IB2ge1aTLo7sa5d4g"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0ZTk2OGI4NWI3MTcxYzU0OGM5YjkiLCJpYXQiOjE3MDk1MDE1MzcsImV4cCI6MTcwOTUwNTEzN30.KxvleUu3jQ2kpqthXHGOZ-599Ux_9moPR-ECu2kUbM8"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"title\":\"My first post\",\n  \"category\":\"social media\",\n  \"text\":\"This new app is amazing!\"\n}",
+                "raw": "{\n  \"title\":\"good post\",\n  \"content\":\"Haha, nice opinion\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "8d53c30a-7d89-43cb-9727-b74d6c22e2c7",
-            "colId": "8a4a5f00-f7f2-4b20-a509-c333d8b5a850",
+            "_id": "5ec157a0-b616-4c1c-b54c-2d1ce97d775f",
+            "colId": "312f12bf-3b63-4474-be85-24392d5a71a6",
             "containerId": "",
-            "name": "getPosts",
-            "url": "http://localhost:8080/ps_laboratorio_3/v1/posts?from=0&limit=6",
+            "name": "getComments",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/comments?from=0&limit=6",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-03-03T06:56:20.968Z",
-            "modified": "2024-03-03T06:56:47.302Z",
+            "created": "2024-03-03T20:18:41.570Z",
+            "modified": "2024-03-03T20:53:04.064Z",
             "headers": [],
             "params": [
                 {
@@ -55,15 +55,15 @@
             "tests": []
         },
         {
-            "_id": "40767a1e-54a5-42a5-80ab-189b30d31fc0",
-            "colId": "8a4a5f00-f7f2-4b20-a509-c333d8b5a850",
+            "_id": "9e7ac66b-a06b-44e7-b521-90f38a6b4cf0",
+            "colId": "312f12bf-3b63-4474-be85-24392d5a71a6",
             "containerId": "",
-            "name": "putPost",
-            "url": "http://localhost:8080/ps_laboratorio_3/v1/posts/65e4e9f4b85b7171c548c9c6",
+            "name": "putComment",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/comments/65e4ee3528df6088634c9102",
             "method": "PUT",
             "sortNum": 30000,
-            "created": "2024-03-03T08:04:35.329Z",
-            "modified": "2024-03-03T21:32:29.913Z",
+            "created": "2024-03-03T20:18:48.860Z",
+            "modified": "2024-03-03T21:41:01.005Z",
             "headers": [
                 {
                     "name": "x-token",
@@ -73,21 +73,21 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"title\":\"My first post\",\n  \"category\":\"social media ok\",\n  \"text\":\"I hate this new app lol\"\n}",
+                "raw": "{\n  \"title\":\"bad comment\",\n  \"content\":\"Bad opinion lol\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "33f5fb9f-8320-41df-bd1f-659488fec798",
-            "colId": "8a4a5f00-f7f2-4b20-a509-c333d8b5a850",
+            "_id": "fc685c9b-6f4b-4b1a-b634-be18c1748d06",
+            "colId": "312f12bf-3b63-4474-be85-24392d5a71a6",
             "containerId": "",
-            "name": "deletePost",
-            "url": "http://localhost:8080/ps_laboratorio_3/v1/posts/65e4e9f4b85b7171c548c9c6",
+            "name": "deleteComment",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/comments/65e4ee3528df6088634c9102",
             "method": "DELETE",
             "sortNum": 40000,
-            "created": "2024-03-03T08:04:41.303Z",
-            "modified": "2024-03-03T21:38:08.960Z",
+            "created": "2024-03-03T20:18:56.429Z",
+            "modified": "2024-03-03T21:41:18.157Z",
             "headers": [
                 {
                     "name": "x-token",

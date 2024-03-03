@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "usersOpCollection",
-    "dateExported": "2024-03-03T05:24:04.416Z",
+    "dateExported": "2024-03-03T21:41:47.236Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -10,11 +10,11 @@
             "colId": "5739e89c-01fd-4e8b-969a-dc4361d8f92b",
             "containerId": "",
             "name": "getUsers",
-            "url": "http://localhost:8080/ps_laboratorio_3/v1/users?from=0&limit=3",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/users?from=0&limit=6",
             "method": "GET",
             "sortNum": 20000,
             "created": "2024-03-02T07:33:21.133Z",
-            "modified": "2024-03-03T05:20:53.246Z",
+            "modified": "2024-03-03T06:52:23.808Z",
             "headers": [],
             "params": [
                 {
@@ -24,7 +24,7 @@
                 },
                 {
                     "name": "limit",
-                    "value": "3",
+                    "value": "6",
                     "isPath": false
                 }
             ],
@@ -39,12 +39,12 @@
             "method": "POST",
             "sortNum": 30000,
             "created": "2024-03-02T21:51:50.537Z",
-            "modified": "2024-03-03T05:11:08.740Z",
+            "modified": "2024-03-03T21:19:36.431Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\":\"juanA1\",\n  \"email\":\"juanA1@gmail.com\",\n  \"password\":\"1234567\"\n}",
+                "raw": "{\n  \"name\":\"juanitoZx\",\n  \"email\":\"juanito@gmail.com\",\n  \"password\":\"1234567\"\n}",
                 "form": []
             },
             "tests": []
@@ -54,16 +54,16 @@
             "colId": "5739e89c-01fd-4e8b-969a-dc4361d8f92b",
             "containerId": "",
             "name": "putUsers",
-            "url": "http://localhost:8080/ps_laboratorio_3/v1/users/65e4066c2fe87fa2e8adb109",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/users/65e4e968b85b7171c548c9b9",
             "method": "PUT",
             "sortNum": 40000,
             "created": "2024-03-03T01:25:20.838Z",
-            "modified": "2024-03-03T05:20:21.405Z",
+            "modified": "2024-03-03T21:20:28.607Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\":\"juana\",\n  \"email\":\"juanAA@gmail.com\",\n  \"lastPassword\":\"1234567\",\n  \"password\":\"123457\"\n}",
+                "raw": "{\n  \"name\":\"juanitoZ\",\n  \"email\":\"juanitoZ@gmail.com\",\n  \"lastPassword\":\"1234567\",\n  \"password\":\"365894\"\n}",
                 "form": []
             },
             "tests": []
