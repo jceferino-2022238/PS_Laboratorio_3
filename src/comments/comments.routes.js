@@ -1,24 +1,24 @@
 import { Router } from "express";
 import { check } from "express-validator";
+import { commentGet, commentPost, commentsDelete, commentsPut } from "./comments.controller.js";
 import { validateFields } from "../middlewares/validateFields.js";
-import { postGet, postPost, postsDelete, postsPut } from "./post.controller.js";
-import { exPostById } from "../helpers/db-validators.js";
+import { exCommentById, exPostById } from "../helpers/db-validators.js";
 import { validateJWT } from '../middlewares/validate-jwt.js'
 import { isUserRole } from '../middlewares/role-validation.js'
 const router = Router();
-
-router.get("/", postGet);   
+router.get("/", commentGet)
 
 router.post(
-    "/",
+    "/:id",
     [
         validateJWT,
         isUserRole,
+        check("id", "Not valid ID").isMongoId(),
+        check("id").custom(exPostById),
         check("title", "Title isnt optional").not().isEmpty(),
-        check("category", "Category isnt optional").not().isEmpty(),
-        check("text", "Text isnt optional").not().isEmpty(),
-        validateFields,
-    ], postPost)
+        check("content", "Content isnt optional").not().isEmpty(),
+        validateFields
+    ], commentPost);
 
 router.put(
     "/:id",
@@ -26,9 +26,9 @@ router.put(
         validateJWT,
         isUserRole,
         check("id", "Not valid ID").isMongoId(),
-        check("id").custom(exPostById),
+        check("id").custom(exCommentById),
         validateFields
-    ], postsPut)
+    ], commentsPut);
 
 router.delete(
     "/:id",
@@ -36,8 +36,8 @@ router.delete(
         validateJWT,
         isUserRole,
         check("id", "Not valid ID").isMongoId(),
-        check("id").custom(exPostById),
+        check("id").custom(exCommentById),
         validateFields
-    ], postsDelete)
-    
-export default router;
+    ], commentsDelete);
+
+    export default router;

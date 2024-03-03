@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const PostSchema = mongoose.Schema({
     title:{
         type: String,
-        required: [true, 'Tittle isnt optional']
+        required: [true, 'Title isnt optional']
     },
     category:{
         type: String,
@@ -16,6 +16,10 @@ const PostSchema = mongoose.Schema({
     author:{
         type: mongoose.Schema.Types.ObjectId,
         required: true
+    },
+    comments:{
+        type: [mongoose.Schema.Types.ObjectId], 
+        required: true,
     },
     state: {
         type: Boolean,

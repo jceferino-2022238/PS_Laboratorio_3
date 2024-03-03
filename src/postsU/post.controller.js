@@ -1,6 +1,7 @@
 import { response, request} from 'express';
 import Post from './post.model.js'
 import User from '../users/user.model.js'
+import jwt from "jsonwebtoken"
 
 export const postGet = async (req = request, res = response) =>{
     const {limit, from} = req.query;
@@ -19,11 +20,12 @@ export const postGet = async (req = request, res = response) =>{
     })
 }
 export const postPost = async (req, res) =>{
-    const { id } = req.params;
     const { title, category, text} = req.body;
-
+    const token = req.header('x-token');
     try {
-        const user = await User.findOne({_id: id});
+        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+        const user = await User.findById(uid);
+        
         const post = new Post({title, category, text, author: user._id});
         await post.save();
         user.posts.push(post._id);
@@ -32,8 +34,8 @@ export const postPost = async (req, res) =>{
             msg: 'New Post',
             user: user.email
         })
-    } catch (error) {
-        res.status(500).json({error: 'Post couldnt be added'})
+    } catch (e) {
+        res.status(500).json({e: 'Post couldnt be added'})
     }
 };
 
