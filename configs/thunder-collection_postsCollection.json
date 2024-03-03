@@ -1,0 +1,86 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "postsCollection",
+    "dateExported": "2024-03-03T08:07:48.838Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "32f69864-b4a2-4379-9e49-2fd4e54eae04",
+            "colId": "8a4a5f00-f7f2-4b20-a509-c333d8b5a850",
+            "containerId": "",
+            "name": "newPost",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/posts/65e41ce8ee273c3d4b484391",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-03T06:44:23.136Z",
+            "modified": "2024-03-03T06:47:23.626Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\":\"My first post\",\n  \"category\":\"futbol\",\n  \"text\":\"Futbol is the best sport!\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8d53c30a-7d89-43cb-9727-b74d6c22e2c7",
+            "colId": "8a4a5f00-f7f2-4b20-a509-c333d8b5a850",
+            "containerId": "",
+            "name": "getPosts",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/posts?from=0&limit=6",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-03T06:56:20.968Z",
+            "modified": "2024-03-03T06:56:47.302Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "from",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "6",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "40767a1e-54a5-42a5-80ab-189b30d31fc0",
+            "colId": "8a4a5f00-f7f2-4b20-a509-c333d8b5a850",
+            "containerId": "",
+            "name": "putPost",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/posts/65e41d27369ce6f80abe51db",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-03T08:04:35.329Z",
+            "modified": "2024-03-03T08:06:04.947Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\":\"My first post\",\n  \"category\":\"futbol\",\n  \"text\":\"LOL\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "33f5fb9f-8320-41df-bd1f-659488fec798",
+            "colId": "8a4a5f00-f7f2-4b20-a509-c333d8b5a850",
+            "containerId": "",
+            "name": "deletePost",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/posts/65e4207c62bfe9444012f227",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-03T08:04:41.303Z",
+            "modified": "2024-03-03T08:07:23.140Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

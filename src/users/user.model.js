@@ -17,6 +17,10 @@ const UserSchema = mongoose.Schema({
         type: String,
         default: "USER_ROLE"
     },
+    posts:{
+        type: [mongoose.Schema.Types.ObjectId],
+        required: true,
+    },
     state: {
         type: Boolean,
         default: true

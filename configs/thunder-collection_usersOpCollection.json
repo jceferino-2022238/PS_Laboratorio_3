@@ -1,0 +1,72 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "usersOpCollection",
+    "dateExported": "2024-03-03T05:24:04.416Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "eb890970-14e0-4792-82d2-f8e6606d3b7a",
+            "colId": "5739e89c-01fd-4e8b-969a-dc4361d8f92b",
+            "containerId": "",
+            "name": "getUsers",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/users?from=0&limit=3",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-02T07:33:21.133Z",
+            "modified": "2024-03-03T05:20:53.246Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "from",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "3",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "652e41f2-5c0d-426d-92bd-fc15b87867f4",
+            "colId": "5739e89c-01fd-4e8b-969a-dc4361d8f92b",
+            "containerId": "",
+            "name": "userRegister",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/users",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-03-02T21:51:50.537Z",
+            "modified": "2024-03-03T05:11:08.740Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"juanA1\",\n  \"email\":\"juanA1@gmail.com\",\n  \"password\":\"1234567\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9ac1921b-3b7b-43b8-a8f8-37acccf6ff13",
+            "colId": "5739e89c-01fd-4e8b-969a-dc4361d8f92b",
+            "containerId": "",
+            "name": "putUsers",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/users/65e4066c2fe87fa2e8adb109",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-03T01:25:20.838Z",
+            "modified": "2024-03-03T05:20:21.405Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"juana\",\n  \"email\":\"juanAA@gmail.com\",\n  \"lastPassword\":\"1234567\",\n  \"password\":\"123457\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

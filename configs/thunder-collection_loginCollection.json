@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "loginCollection",
+    "dateExported": "2024-03-03T05:24:20.515Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "9413d238-5e8b-4a14-a659-2ecc707346da",
+            "colId": "e19daa14-c6c8-4223-94a3-a39f262a0bba",
+            "containerId": "",
+            "name": "login",
+            "url": "http://localhost:8080/ps_laboratorio_3/v1/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-03T01:14:52.846Z",
+            "modified": "2024-03-03T01:24:49.977Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userOrEmail\":\"Pancho De la Cruz\",\n  \"password\":\"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
